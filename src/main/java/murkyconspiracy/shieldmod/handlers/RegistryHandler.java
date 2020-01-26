@@ -9,7 +9,6 @@ import murkyconspiracy.shieldmod.item.StoneShield;
 import murkyconspiracy.shieldmod.item.WoodenShield;
 import murkyconspiracy.shieldmod.lists.ItemList;
 import net.minecraft.item.Item;
-import net.minecraft.item.crafting.RecipeManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;

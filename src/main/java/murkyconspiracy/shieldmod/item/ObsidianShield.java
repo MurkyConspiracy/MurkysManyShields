@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 
 public class ObsidianShield extends Item {
 	
-	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).setNoRepair();
+	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).setNoRepair().maxStackSize(1);
 	public ObsidianShield() {
 		super(properties);
 		this.setRegistryName(new ResourceLocation(ShieldMod.modid, "obsidianshield"));
