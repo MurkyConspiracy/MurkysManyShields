@@ -1,0 +1,101 @@
+---- Minecraft Crash Report ----
+// Who set us up the TNT?
+
+Time: 1/24/20 9:50 PM
+Description: Ticking player
+
+java.lang.IllegalArgumentException: Cannot get property BooleanProperty{name=powered, clazz=class java.lang.Boolean, values=[true, false]} as it does not exist in Block{minecraft:grass_block}
+	at net.minecraft.state.StateHolder.get(StateHolder.java:94) ~[?:?] {re:classloading}
+	at net.minecraft.state.StateHolder.cycle(StateHolder.java:46) ~[?:?] {re:classloading}
+	at murkyconspiracy.shieldmod.item.RedstoneShield.inventoryTick(RedstoneShield.java:43) ~[?:?] {re:classloading}
+	at net.minecraft.item.ItemStack.inventoryTick(ItemStack.java:478) ~[?:?] {re:classloading}
+	at net.minecraft.entity.player.PlayerInventory.tick(PlayerInventory.java:291) ~[?:?] {re:classloading}
+	at net.minecraft.entity.player.PlayerEntity.livingTick(PlayerEntity.java:531) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.entity.LivingEntity.tick(LivingEntity.java:2256) ~[?:?] {re:classloading}
+	at net.minecraft.entity.player.PlayerEntity.tick(PlayerEntity.java:236) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.entity.player.ServerPlayerEntity.playerTick(ServerPlayerEntity.java:377) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.network.play.ServerPlayNetHandler.tick(ServerPlayNetHandler.java:183) ~[?:?] {re:classloading}
+	at net.minecraft.network.NetworkManager.tick(NetworkManager.java:245) ~[?:?] {re:classloading}
+	at net.minecraft.network.NetworkSystem.tick(NetworkSystem.java:148) ~[?:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:894) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:812) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:658) [?:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_231] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.state.StateHolder.get(StateHolder.java:94)
+	at net.minecraft.state.StateHolder.cycle(StateHolder.java:46)
+	at murkyconspiracy.shieldmod.item.RedstoneShield.inventoryTick(RedstoneShield.java:43)
+	at net.minecraft.item.ItemStack.inventoryTick(ItemStack.java:478)
+	at net.minecraft.entity.player.PlayerInventory.tick(PlayerInventory.java:291)
+	at net.minecraft.entity.player.PlayerEntity.livingTick(PlayerEntity.java:531)
+	at net.minecraft.entity.LivingEntity.tick(LivingEntity.java:2256)
+	at net.minecraft.entity.player.PlayerEntity.tick(PlayerEntity.java:236)
+
+-- Player being ticked --
+Details:
+	Entity Type: minecraft:player (net.minecraft.entity.player.ServerPlayerEntity)
+	Entity ID: 257
+	Entity Name: Dev
+	Entity's Exact location: -22.51, 71.00, -136.58
+	Entity's Block location: World: (-23,71,-137), Chunk: (at 9,4,7 in -2,-9; contains blocks -32,0,-144 to -17,255,-129), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.entity.player.ServerPlayerEntity.playerTick(ServerPlayerEntity.java:377)
+	at net.minecraft.network.play.ServerPlayNetHandler.tick(ServerPlayNetHandler.java:183)
+	at net.minecraft.network.NetworkManager.tick(NetworkManager.java:245)
+
+-- Ticking connection --
+Details:
+	Connection: net.minecraft.network.NetworkManager@605cb72b
+Stacktrace:
+	at net.minecraft.network.NetworkSystem.tick(NetworkSystem.java:148)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:894)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:812)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:658)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.15.1
+	Minecraft Version ID: 1.15.1
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_231, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1569144968 bytes (1496 MB) / 3439329280 bytes (3280 MB) up to 7635730432 bytes (7282 MB)
+	CPUs: 12
+	JVM Flags: 2 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx8192M
+	ModLauncher: 5.0.0-milestone.4+67+b1a340b
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/eventbus-2.0.0-milestone.1-service.jar eventbus PLUGINSERVICE 
+		/forge-1.15.1-30.0.42_mapped_snapshot_20190719-1.14.3-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.15.1-30.0.42_mapped_snapshot_20190719-1.14.3-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-2.0.0-milestone.1-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.15.1-30.0.42_mapped_snapshot_20190719-1.14.3-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.15.1-30.0.42_mapped_snapshot_20190719-1.14.3-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/forge-1.15.1-30.0.42_mapped_snapshot_20190719-1.14.3-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 30.0
+	Forge: net.minecraftforge:30.0.42
+	FML Language Providers: 
+		javafml@30.0
+		minecraft@1
+	Mod List: 
+		forge-1.15.1-30.0.42_mapped_snapshot_20190719-1.14.3-recomp.jar Forge {forge@29.0.4 DONE}
+		main Murky's Many Shields {shieldmod@1.1 DONE}
+		client-extra.jar Minecraft {minecraft@1.15 DONE}
+	Player Count: 1 / 8; [ServerPlayerEntity['Dev'/257, l='New World', x=-22.51, y=71.00, z=-136.58]]
+	Data Packs: vanilla, mod:forge (incompatible), mod:shieldmod
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'

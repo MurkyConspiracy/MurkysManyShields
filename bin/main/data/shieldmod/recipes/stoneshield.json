@@ -1,0 +1,19 @@
+{
+	"type" : "minecraft:crafting_shaped",
+	
+	"pattern": 
+	[
+		"SBS",
+		"BBB",
+		"SBS"
+	],
+	"key":
+	{
+		"S" : {"item" : "minecraft:chiseled_stone_bricks"},
+		"B" : {"item" : "minecraft:stone_bricks"}
+	},
+	
+	"result" : {"item" : "shieldmod:stoneshield"},
+	"count" : 1
+	
+}

@@ -1,0 +1,13 @@
+Wood Shield:
+	Defaults:
+		Durability: 150
+		Reparable: Wood planks
+		Effects:
+			N/A
+		Crafting Recipe:
+			SWS
+			WWW
+			SWS
+		Crafting Key:
+			S : Smooth Stone
+			W : Logs

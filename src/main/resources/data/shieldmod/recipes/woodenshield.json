@@ -1,0 +1,19 @@
+{
+	"type" : "minecraft:crafting_shaped",
+	
+	"pattern": 
+	[
+		"SWS",
+		"WWW",
+		"SWS"
+	],
+	"key":
+	{
+		"W" : {"tag" : "minecraft:logs"},
+		"S" : {"item" : "minecraft:smooth_stone"}
+	},
+	
+	"result" : {"item" : "shieldmod:woodenshield"},
+	"count" : 1
+	
+}

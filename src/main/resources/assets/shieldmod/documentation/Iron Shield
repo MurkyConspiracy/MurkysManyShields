@@ -1,0 +1,21 @@
+Iron Shield:
+	Defaults:
+		Durability: 600
+		Reparable: Iron Ingot
+		Effects:
+			While Idle:
+				N/A
+			While Using:
+				Slowness 1
+			While Using and Sneaking:
+				Slowness 1
+				Resistance 2
+		Crafting Recipes:
+			GGG
+			IBI
+			LLL
+		Crafting Key:
+			G : Gold Ingot
+			I : Iron Ingot
+			B : Iron Block
+			L : Lapis Lazuli

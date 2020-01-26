@@ -1,0 +1,12 @@
+{
+	"item.shieldmod.woodenshield": "Wooden Shield",
+	"item.shieldmod.stoneshield": "Stone Shield",
+	"item.shieldmod.ironshield": "Iron Shield",
+	"item.shieldmod.goldshield": "Gold Shield",
+	"item.shieldmod.redstoneshield": "Redstone Shield",
+	"item.shieldmod.diamondshield": "Diamond Shield",
+	"item.shieldmod.obsidianshield": "Obsidian Shield",
+	
+	"itemGroup.shieldmodig": "Shield Mod"
+	
+}

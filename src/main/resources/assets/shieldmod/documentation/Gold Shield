@@ -1,0 +1,19 @@
+Gold Shield:
+	Defaults:
+		Durability: 150
+		Reparable: Gold Ingot
+		Effects:
+			While Idle:
+				Resistance 1
+			While Using:
+				Resistance 2
+			While Using and Sneaking:
+				Resistance 3
+		Crafting Recipe:
+			QBQ
+			BGB
+			QBQ
+		Crafting Key:
+			Q : Quartz
+			B : Quartz Block
+			G : Gold Block
