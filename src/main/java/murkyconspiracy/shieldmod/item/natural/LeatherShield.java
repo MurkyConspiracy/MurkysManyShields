@@ -1,4 +1,4 @@
-package murkyconspiracy.shieldmod.item;
+package murkyconspiracy.shieldmod.item.natural;
 
 import murkyconspiracy.shieldmod.ShieldMod;
 import net.minecraft.block.DispenserBlock;
@@ -18,12 +18,12 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class WoodenShield extends Item {
+public class LeatherShield extends Item {
 	
 	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(150);
-	public WoodenShield() {
+	public LeatherShield() {
 		super(properties);
-		this.setRegistryName(new ResourceLocation(ShieldMod.modid, "woodenshield"));
+		this.setRegistryName(new ResourceLocation(ShieldMod.modid, "leathershield"));
 		this.addPropertyOverride(new ResourceLocation("blocking"), (p_210314_0_, p_210314_1_, p_210314_2_) -> {
 	         return p_210314_2_ != null && p_210314_2_.isHandActive() && p_210314_2_.getActiveItemStack() == p_210314_0_ ? 1.0F : 0.0F;
 	      });

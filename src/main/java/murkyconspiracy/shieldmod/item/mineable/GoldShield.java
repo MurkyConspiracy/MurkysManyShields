@@ -1,4 +1,4 @@
-package murkyconspiracy.shieldmod.item;
+package murkyconspiracy.shieldmod.item.mineable;
 
 import murkyconspiracy.shieldmod.ShieldMod;
 import net.minecraft.block.DispenserBlock;

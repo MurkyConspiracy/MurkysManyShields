@@ -1,11 +1,20 @@
 {
-	"item.shieldmod.woodenshield": "Wooden Shield",
-	"item.shieldmod.stoneshield": "Stone Shield",
-	"item.shieldmod.ironshield": "Iron Shield",
-	"item.shieldmod.goldshield": "Gold Shield",
-	"item.shieldmod.redstoneshield": "Redstone Shield",
+	"_Mineable": "Mineable Shields",
 	"item.shieldmod.diamondshield": "Diamond Shield",
+	"item.shieldmod.goldshield": "Gold Shield",
+	"item.shieldmod.ironshield": "Iron Shield",
 	"item.shieldmod.obsidianshield": "Obsidian Shield",
+	"item.shieldmod.redstoneshield": "Redstone Shield",
+	"item.shieldmod.stoneshield": "Stone Shield",
+	
+	"_Natural": "Natural Shields",
+	"item.shieldmod.brickshield": "Brick Shield",
+	"item.shieldmod.clayshield": "Clay Shield",
+	"item.shieldmod.dirtshield": "Dirt Shield",
+	"item.shieldmod.grassshield": "Grass Shield",
+	"item.shieldmod.lethershield": "Leather Shield",
+	"item.shieldmod.woodenshield": "Wooden Shield",
+	"item.shieldmod.woodlyshield": "Woodly Shield",
 	
 	"itemGroup.shieldmodig": "Shield Mod"
 	

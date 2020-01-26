@@ -1,12 +1,7 @@
 package murkyconspiracy.shieldmod.handlers;
 
-import murkyconspiracy.shieldmod.item.DiamondShield;
-import murkyconspiracy.shieldmod.item.GoldShield;
-import murkyconspiracy.shieldmod.item.IronShield;
-import murkyconspiracy.shieldmod.item.ObsidianShield;
-import murkyconspiracy.shieldmod.item.RedstoneShield;
-import murkyconspiracy.shieldmod.item.StoneShield;
-import murkyconspiracy.shieldmod.item.WoodenShield;
+import murkyconspiracy.shieldmod.item.mineable.*;
+import murkyconspiracy.shieldmod.item.natural.*;
 import murkyconspiracy.shieldmod.lists.ItemList;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -21,13 +16,27 @@ public class RegistryHandler
 	public static void registerItems(final RegistryEvent.Register<Item> event)
 	{
 		event.getRegistry().registerAll(
-		ItemList.wooden_shield = new WoodenShield(),
-		ItemList.stone_shield = new StoneShield(),
-		ItemList.iron_shield = new IronShield(),
-		ItemList.redstone_shield = new RedstoneShield(),
-		ItemList.gold_shield = new GoldShield(),
-		ItemList.diamond_shield = new DiamondShield(),
-		ItemList.obsidian_shield = new ObsidianShield()
+				
+				
+				//Mineable Shields
+				ItemList.diamond_shield = new DiamondShield(),
+				ItemList.gold_shield = new GoldShield(),
+				ItemList.iron_shield = new IronShield(),
+				ItemList.obsidian_shield = new ObsidianShield(),
+				ItemList.redstone_shield = new RedstoneShield(),
+				ItemList.stone_shield = new StoneShield(),
+				
+				
+				//Natural Shelds
+				ItemList.brick_shield = new BrickShield(),
+				ItemList.clay_shield = new ClayShield(),
+				ItemList.dirt_shield = new DirtShield(),
+				ItemList.grass_shield = new GrassShield(),
+				ItemList.leather_shield = new LeatherShield(),
+				ItemList.wooden_shield = new WoodenShield(),
+				ItemList.wooly_shield = new WoolyShield()
+				
+
 		
 		);
 		
