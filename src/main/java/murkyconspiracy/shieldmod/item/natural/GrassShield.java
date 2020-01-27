@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 
 public class GrassShield extends Item {
 	
-	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(150);
+	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(35);
 	public GrassShield() {
 		super(properties);
 		this.setRegistryName(new ResourceLocation(ShieldMod.modid, "grassshield"));
