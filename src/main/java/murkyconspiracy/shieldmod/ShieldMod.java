@@ -38,8 +38,8 @@ public class ShieldMod
 		ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.server_config);
 		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.client_config);
 
-		Config.loadConfig(Config.server_config, FMLPaths.CONFIGDIR.get().resolve("skygods-server.toml").toString());
-		Config.loadConfig(Config.client_config, FMLPaths.CONFIGDIR.get().resolve("skygods-client.toml").toString());
+		Config.loadConfig(Config.server_config, FMLPaths.CONFIGDIR.get().resolve("shieldmod-server.toml").toString());
+		Config.loadConfig(Config.client_config, FMLPaths.CONFIGDIR.get().resolve("shieldmod-client.toml").toString());
 		
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientRegistries);
@@ -50,7 +50,6 @@ public class ShieldMod
 	
 	private void setup(final FMLCommonSetupEvent event)
 	{
-		logger.info("SkyGods have smiled upon thee.");
 
 	}
 	

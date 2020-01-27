@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 
 public class DirtShield extends Item {
 	
-	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(3);
+	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(15);
 	public DirtShield() {
 		super(properties);
 		this.setRegistryName(new ResourceLocation(ShieldMod.modid, "dirtshield"));
