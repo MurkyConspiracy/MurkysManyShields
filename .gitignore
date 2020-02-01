@@ -23,3 +23,7 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
+README.txt
+LICENSE.txt
+gradle/wrapper/gradle-wrapper.properties
+build.gradle
