@@ -15,7 +15,10 @@ public class NaturalConfig
 	
 	public static void init(ForgeConfigSpec.Builder server, ForgeConfigSpec.Builder client ) 
 	{
+		
 		server.comment("Natural Shields config:");
+		
+		server.push("Natural");
 		
 		natural_shields_enable = server.comment("Enable Natural Shields?")
 				.define("natural.enable", true);
@@ -40,5 +43,7 @@ public class NaturalConfig
 		
 		wooly_shield_enable = server.comment("Enable Wooly Shields?")
 				.define("wooly.enable", true);
+		
+		server.pop();
 	}
 }

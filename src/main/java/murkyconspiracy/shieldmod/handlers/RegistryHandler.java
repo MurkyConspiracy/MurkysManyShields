@@ -38,7 +38,10 @@ public class RegistryHandler
 	}
 	
 	private static void handleMineables()
-	{
+	{		
+		
+		ItemRegistryList.add(ItemList.obsidian_shield = new ObsidianShield());
+		
 		if(MineableConfig.mineable_shields_enabled.get())
 		{
 			if(MineableConfig.diamond_shield_enable.get())
@@ -50,8 +53,7 @@ public class RegistryHandler
 			if(MineableConfig.iron_shield_enable.get())
 				ItemRegistryList.add(ItemList.iron_shield = new IronShield());
 			
-			if(MineableConfig.obsidian_shield_enable.get())
-				ItemRegistryList.add(ItemList.obsidian_shield = new ObsidianShield());
+
 			
 			if(MineableConfig.redstone_shield_enable.get())
 				ItemRegistryList.add(ItemList.redstone_shield = new RedstoneShield());

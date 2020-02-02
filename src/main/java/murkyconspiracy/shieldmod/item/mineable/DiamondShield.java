@@ -3,6 +3,7 @@ package murkyconspiracy.shieldmod.item.mineable;
 import java.util.Random;
 
 import murkyconspiracy.shieldmod.ShieldMod;
+import murkyconspiracy.shieldmod.config.MineableConfig;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -22,7 +23,7 @@ import net.minecraft.world.World;
 
 public class DiamondShield extends Item {
 	
-	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(1050);
+	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(MineableConfig.diamond_shield_durability.get());
 	static Random r1;
 	public DiamondShield() {
 		super(properties);

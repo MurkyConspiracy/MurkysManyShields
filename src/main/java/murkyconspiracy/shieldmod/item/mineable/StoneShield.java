@@ -1,6 +1,7 @@
 package murkyconspiracy.shieldmod.item.mineable;
 
 import murkyconspiracy.shieldmod.ShieldMod;
+import murkyconspiracy.shieldmod.config.MineableConfig;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -20,7 +21,7 @@ import net.minecraft.world.World;
 
 public class StoneShield extends Item {
 	
-	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(450);
+	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(MineableConfig.stone_shield_durability.get());
 	public StoneShield() {
 		super(properties);
 		this.setRegistryName(new ResourceLocation(ShieldMod.modid, "stoneshield"));

@@ -3,6 +3,7 @@ package murkyconspiracy.shieldmod.item.mineable;
 import java.util.function.Consumer;
 
 import murkyconspiracy.shieldmod.ShieldMod;
+import murkyconspiracy.shieldmod.config.MineableConfig;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -21,9 +22,9 @@ import net.minecraft.world.World;
 
 public class ObsidianShield extends Item {
 	
-	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).setNoRepair().maxStackSize(1);
+
 	public ObsidianShield() {
-		super(properties);
+		super(ShieldMod.ObsidianShield);
 		this.setRegistryName(new ResourceLocation(ShieldMod.modid, "obsidianshield"));
 		this.addPropertyOverride(new ResourceLocation("blocking"), (p_210314_0_, p_210314_1_, p_210314_2_) -> {
 	         return p_210314_2_ != null && p_210314_2_.isHandActive() && p_210314_2_.getActiveItemStack() == p_210314_0_ ? 1.0F : 0.0F;
@@ -83,19 +84,26 @@ public class ObsidianShield extends Item {
     
     @Override
     public boolean isDamageable() {
-    	return false;
+    	if(MineableConfig.obsidian_shield_durability.get() == -1)
+    		return false;
+    	else
+    		return true;
     }
     
     @Override
     public int getMaxDamage(ItemStack stack) {
-    	// TODO Auto-generated method stub
-    	return 9999999;
+    	if(MineableConfig.obsidian_shield_durability.get() == -1)
+    		return 100000;
+    	else
+    		return MineableConfig.obsidian_shield_durability.get();
     }
     
     @Override
     public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) {
-    	// TODO Auto-generated method stub
-    	return 0;
+    	if(MineableConfig.obsidian_shield_durability.get() == -1)
+    		return 0;
+    	else
+    		return super.damageItem(stack, amount, entity, onBroken);
     }
 	
 }

@@ -1,6 +1,7 @@
 package murkyconspiracy.shieldmod.item.mineable;
 
 import murkyconspiracy.shieldmod.ShieldMod;
+import murkyconspiracy.shieldmod.config.MineableConfig;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,7 +20,7 @@ import net.minecraft.world.World;
 
 public class IronShield extends Item {
 	
-	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(600);
+	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(MineableConfig.iron_shield_durability.get());
 	public IronShield() {
 		super(properties);
 		this.setRegistryName(new ResourceLocation(ShieldMod.modid, "ironshield"));

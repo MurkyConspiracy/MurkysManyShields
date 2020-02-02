@@ -4,10 +4,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import murkyconspiracy.shieldmod.config.Config;
+import murkyconspiracy.shieldmod.config.MineableConfig;
 import murkyconspiracy.shieldmod.handlers.RegistryHandler;
 import murkyconspiracy.shieldmod.handlers.ShieldModItemGroup; 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Item.Properties;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -29,22 +31,26 @@ public class ShieldMod
 	public static final ItemGroup shieldmodIG = new ShieldModItemGroup();
 	
 	public static final Logger logger = LogManager.getLogger(modid);
+	public static Properties ObsidianShield = new Properties().setNoRepair().maxStackSize(1);
 	
 	public ShieldMod() 
 	{
 		
 		instance = this;
 		
-		ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.server_config);
-		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.client_config);
-
 		Config.loadConfig(Config.server_config, FMLPaths.CONFIGDIR.get().resolve("shieldmod-server.toml").toString());
 		Config.loadConfig(Config.client_config, FMLPaths.CONFIGDIR.get().resolve("shieldmod-client.toml").toString());
+		
+		ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.server_config);
+		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.client_config);
 		
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientRegistries);
 		
 		MinecraftForge.EVENT_BUS.register(this);
+		
+		if(MineableConfig.mineable_shields_enabled.get())
+			ObsidianShield = new Properties().setNoRepair().group(shieldmodIG).maxStackSize(1);
 		
 	}
 	

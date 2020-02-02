@@ -13,7 +13,7 @@ public class ShieldModItemGroup extends ItemGroup
 
 	@Override
 	public ItemStack createIcon() {
-		return new ItemStack(ItemList.wooden_shield);
+		return new ItemStack(ItemList.obsidian_shield);
 	}
 
 }

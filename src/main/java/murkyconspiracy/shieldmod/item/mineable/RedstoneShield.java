@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.function.Consumer;
 
 import murkyconspiracy.shieldmod.ShieldMod;
+import murkyconspiracy.shieldmod.config.MineableConfig;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -23,7 +24,7 @@ import net.minecraft.world.World;
 
 public class RedstoneShield extends Item {
 	
-	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(850).setNoRepair();
+	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(MineableConfig.redstone_shield_durability.get()).setNoRepair();
 	public RedstoneShield() {
 		super(properties);
 		this.setRegistryName(new ResourceLocation(ShieldMod.modid, "redstoneshield"));
