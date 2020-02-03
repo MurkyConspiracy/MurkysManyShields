@@ -1,6 +1,7 @@
 package murkyconspiracy.shieldmod.item.natural;
 
 import murkyconspiracy.shieldmod.ShieldMod;
+import murkyconspiracy.shieldmod.config.NaturalConfig;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -20,7 +21,7 @@ import net.minecraft.world.World;
 
 public class GrassShield extends Item {
 	
-	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(35);
+	static Properties properties = new Properties().group(ShieldMod.shieldmodIG).maxDamage(NaturalConfig.grass_shield_durability.get());
 	public GrassShield() {
 		super(properties);
 		this.setRegistryName(new ResourceLocation(ShieldMod.modid, "grassshield"));

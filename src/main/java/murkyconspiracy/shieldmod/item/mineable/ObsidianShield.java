@@ -23,8 +23,8 @@ import net.minecraft.world.World;
 public class ObsidianShield extends Item {
 	
 
-	public ObsidianShield() {
-		super(ShieldMod.ObsidianShield);
+	public ObsidianShield(Properties properties) {
+		super(properties);
 		this.setRegistryName(new ResourceLocation(ShieldMod.modid, "obsidianshield"));
 		this.addPropertyOverride(new ResourceLocation("blocking"), (p_210314_0_, p_210314_1_, p_210314_2_) -> {
 	         return p_210314_2_ != null && p_210314_2_.isHandActive() && p_210314_2_.getActiveItemStack() == p_210314_0_ ? 1.0F : 0.0F;

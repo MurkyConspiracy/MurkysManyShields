@@ -3,6 +3,7 @@ package murkyconspiracy.shieldmod.handlers;
 import java.util.ArrayList;
 import java.util.List;
 
+import murkyconspiracy.shieldmod.ShieldMod;
 import murkyconspiracy.shieldmod.config.MineableConfig;
 import murkyconspiracy.shieldmod.config.NaturalConfig;
 import murkyconspiracy.shieldmod.item.mineable.DiamondShield;
@@ -20,6 +21,7 @@ import murkyconspiracy.shieldmod.item.natural.WoodenShield;
 import murkyconspiracy.shieldmod.item.natural.WoolyShield;
 import murkyconspiracy.shieldmod.lists.ItemList;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.Properties;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -28,6 +30,8 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 public class RegistryHandler 
 {
 	private static List<Item> ItemRegistryList = new ArrayList<Item>();
+	static Properties ObsidianShieldUNRE = new Properties().setNoRepair().maxStackSize(1);
+	static Properties ObsidianShieldRE = new Properties().setNoRepair().group(ShieldMod.shieldmodIG).maxStackSize(1);
 	@SubscribeEvent
 	public static void registerItems(final RegistryEvent.Register<Item> event)
 	{
@@ -40,7 +44,6 @@ public class RegistryHandler
 	private static void handleMineables()
 	{		
 		
-		ItemRegistryList.add(ItemList.obsidian_shield = new ObsidianShield());
 		
 		if(MineableConfig.mineable_shields_enabled.get())
 		{
@@ -53,7 +56,10 @@ public class RegistryHandler
 			if(MineableConfig.iron_shield_enable.get())
 				ItemRegistryList.add(ItemList.iron_shield = new IronShield());
 			
-
+			if(MineableConfig.obsidian_shield_enable.get())
+				ItemRegistryList.add(ItemList.obsidian_shield = new ObsidianShield(ObsidianShieldRE));
+			else
+				ItemRegistryList.add(ItemList.obsidian_shield = new ObsidianShield(ObsidianShieldUNRE));	
 			
 			if(MineableConfig.redstone_shield_enable.get())
 				ItemRegistryList.add(ItemList.redstone_shield = new RedstoneShield());
