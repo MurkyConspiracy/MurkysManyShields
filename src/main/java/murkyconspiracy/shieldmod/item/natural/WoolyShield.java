@@ -1,18 +1,22 @@
 package murkyconspiracy.shieldmod.item.natural;
 
+import java.util.Random;
+import java.util.function.Consumer;
+
 import murkyconspiracy.shieldmod.ShieldMod;
 import murkyconspiracy.shieldmod.config.NaturalConfig;
 import net.minecraft.block.DispenserBlock;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.UseAction;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -56,7 +60,27 @@ public class WoolyShield extends Item {
 	
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-		return ItemTags.PLANKS.contains(repair.getItem()) || super.getIsRepairable(toRepair, repair);
+		return repair.getItem().equals(Items.STRING);
+	}
+	
+	@Override
+	public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) {
+		if(entity.getType() == EntityType.PLAYER) 
+		{
+			PlayerEntity player = (PlayerEntity)entity;
+			if(stack.getDamage() - amount <= 0)
+			{
+				player.addItemStackToInventory(new ItemStack(Items.STRING, new Random().nextInt(5)));
+			}else
+			{
+				if(new Random().nextInt(100)>94)
+					player.addItemStackToInventory(new ItemStack(Items.STRING));
+			}
+		}
+		
+		
+		return super.damageItem(stack, amount, entity, onBroken);
+		
 	}
 	
     public static DyeColor getColor(ItemStack stack) {
